@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpringBootRestApiApplication<spring-boot-rest-api>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "br.com.williangiovanni.springbootrestapi.SpringBootRestApiApplication",
+      "projectName": "spring-boot-rest-api",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
