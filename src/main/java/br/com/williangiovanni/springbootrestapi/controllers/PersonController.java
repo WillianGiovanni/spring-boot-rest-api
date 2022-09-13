@@ -36,11 +36,10 @@ public class PersonController {
         return personService.findById(id);
     }
 
-    @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON,
-            MediaType.APPLICATION_XML,
+    @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
             MediaType.APPLICATION_YML }, consumes = { MediaType.APPLICATION_JSON,
                     MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
-    public PersonVO createPerson(@RequestBody PersonVO person) {
+    public PersonVO createPerson(@RequestBody PersonVO person) throws Exception {
         return personService.createPerson(person);
     }
 
@@ -48,7 +47,7 @@ public class PersonController {
             MediaType.APPLICATION_XML,
             MediaType.APPLICATION_YML }, consumes = { MediaType.APPLICATION_JSON,
                     MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
-    public PersonVO updatePerson(@RequestBody PersonVO person) {
+    public PersonVO updatePerson(@RequestBody PersonVO person) throws Exception {
         return personService.updatePerson(person);
     }
 
