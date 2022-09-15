@@ -66,8 +66,8 @@ public class BookServiceTest {
 
         assertEquals("Title Test1", result.getTitle());
         assertEquals("Author Test1", result.getAuthor());
-        assertEquals("1", result.getPrice());
-        assertEquals(new Date(), result.getLaunchDate());
+        assertEquals(1.0, result.getPrice());
+        assertNotNull(result.getLaunchDate());
 
     }
 
@@ -99,45 +99,45 @@ public class BookServiceTest {
         List<Book> list = input.mockEntityList();
         when(repository.findAll()).thenReturn(list);
 
-        var people = service.findAll();
-        assertNotNull(people);
-        assertEquals(14, people.size());
+        var books = service.findAll();
+        assertNotNull(books);
+        assertEquals(14, books.size());
 
-        var personOne = people.get(1);
-        assertNotNull(personOne);
-        assertNotNull(personOne.getKey());
-        assertNotNull(personOne.getLinks());
+        var bookOne = books.get(1);
+        assertNotNull(bookOne);
+        assertNotNull(bookOne.getKey());
+        assertNotNull(bookOne.getLinks());
 
-        assertTrue(personOne.toString().contains("links: [</api/book/v1/1>;rel=\"self\"]"));
+        assertTrue(bookOne.toString().contains("links: [</api/book/v1/1>;rel=\"self\"]"));
 
-        assertEquals("Title Test1", personOne.getTitle());
-        assertEquals("Author Test1", personOne.getAuthor());
-        assertEquals("1", personOne.getPrice());
-        assertEquals(new Date(), personOne.getLaunchDate());
+        assertEquals("Title Test1", bookOne.getTitle());
+        assertEquals("Author Test1", bookOne.getAuthor());
+        assertEquals(1.0, bookOne.getPrice());
+        assertNotNull(bookOne.getLaunchDate());
 
-        var personFour = people.get(4);
-        assertNotNull(personFour);
-        assertNotNull(personFour.getKey());
-        assertNotNull(personFour.getLinks());
+        var bookFour = books.get(4);
+        assertNotNull(bookFour);
+        assertNotNull(bookFour.getKey());
+        assertNotNull(bookFour.getLinks());
 
-        assertTrue(personFour.toString().contains("links: [</api/book/v1/4>;rel=\"self\"]"));
+        assertTrue(bookFour.toString().contains("links: [</api/book/v1/4>;rel=\"self\"]"));
 
-        assertEquals("Title Test4", personFour.getTitle());
-        assertEquals("Author Test4", personFour.getAuthor());
-        assertEquals("Last Name Test4", personFour.getPrice());
-        assertEquals("Male", personFour.getLaunchDate());
+        assertEquals("Title Test4", bookFour.getTitle());
+        assertEquals("Author Test4", bookFour.getAuthor());
+        assertEquals(4.0, bookFour.getPrice());
+        assertNotNull(bookFour.getLaunchDate());
 
-        var personSeven = people.get(7);
-        assertNotNull(personSeven);
-        assertNotNull(personSeven.getKey());
-        assertNotNull(personSeven.getLinks());
+        var bookSeven = books.get(7);
+        assertNotNull(bookSeven);
+        assertNotNull(bookSeven.getKey());
+        assertNotNull(bookSeven.getLinks());
 
-        assertTrue(personSeven.toString().contains("links: [</api/book/v1/7>;rel=\"self\"]"));
+        assertTrue(bookSeven.toString().contains("links: [</api/book/v1/7>;rel=\"self\"]"));
 
-        assertEquals("Title Test7", personSeven.getTitle());
-        assertEquals("Author Test7", personSeven.getAuthor());
-        assertEquals("Last Name Test7", personSeven.getPrice());
-        assertEquals(new Date(), personSeven.getLaunchDate());
+        assertEquals("Title Test7", bookSeven.getTitle());
+        assertEquals("Author Test7", bookSeven.getAuthor());
+        assertEquals(7.0, bookSeven.getPrice());
+        assertNotNull(bookSeven.getLaunchDate());
 
     }
 
@@ -156,8 +156,8 @@ public class BookServiceTest {
 
         assertEquals("Title Test1", result.getTitle());
         assertEquals("Author Test1", result.getAuthor());
-        assertEquals("1", result.getPrice());
-        assertEquals(new Date(), result.getLaunchDate());
+        assertEquals(1.0, result.getPrice());
+        assertNotNull(result.getLaunchDate());
 
     }
 
@@ -184,8 +184,8 @@ public class BookServiceTest {
 
         assertEquals("Title Test1", result.getTitle());
         assertEquals("Author Test1", result.getAuthor());
-        assertEquals("1", result.getPrice());
-        assertEquals(new Date(), result.getLaunchDate());
+        assertEquals(1.0, result.getPrice());
+        assertNotNull(result.getLaunchDate());
     }
 
     @Test

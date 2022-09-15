@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/person/v1")
 @Tag(name = "People", description = "Endpoint for managing people")
@@ -46,6 +48,7 @@ public class PersonController {
                 return personService.findAll();
         }
 
+        // @CrossOrigin(origins = "http://localhost:8080")
         @GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
                         MediaType.APPLICATION_YML })
         @Operation(summary = "Finds a Person", description = "Finds a Person", tags = {
@@ -61,6 +64,7 @@ public class PersonController {
                 return personService.findById(id);
         }
 
+        // @CrossOrigin(origins = {"http://localhost:8080", ""})
         @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
                         MediaType.APPLICATION_YML }, consumes = { MediaType.APPLICATION_JSON,
                                         MediaType.APPLICATION_XML, MediaType.APPLICATION_YML })
